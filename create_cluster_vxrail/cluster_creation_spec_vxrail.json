@@ -1,0 +1,71 @@
+{
+   "domainId":"c4212080-75d2-4348-811c-4f501a4cbe98",
+   "computeSpec":{
+      "clusterSpecs":[
+         {
+            "name":"VxRail-Virtual-SAN-Cluster-WLD-SecCluster",
+            "hostSpecs":[
+               {
+                  "ipAddress":"10.0.0.109",
+                  "hostName":"esxi-10.vrack.vsphere.local",
+                  "password":"EvoSddc!2016"
+               },
+               {
+                  "ipAddress":"10.0.0.108",
+                  "hostName":"esxi-9.vrack.vsphere.local",
+                  "password":"EvoSddc!2016"
+               },
+               {
+                  "ipAddress":"10.0.0.107",
+                  "hostName":"esxi-8.vrack.vsphere.local",
+                  "password":"EvoSddc!2016"
+               }
+            ],
+            "datastoreSpec":{
+               "vsanDatastoreSpec":{
+                  "licenseKey":"000JK-G5L9P-W8289-09CK6-19913"
+               }
+            },
+            "networkSpec":{
+               "vdsSpecs":[
+                  {
+                     "name":"SDDC-Dswitch-Private-SecCluster",
+                     "isUsedByNsxt":true,
+                     "portGroupSpecs":[
+                        {
+                           "name":"Management Network_sec_cluster",
+                           "transportType":"MANAGEMENT"
+                        },
+                        {
+                           "name":"Virtual SAN_sec_cluster",
+                           "transportType":"VSAN"
+                        },
+                        {
+                           "name":"vSphere vMotion_sec_cluster",
+                           "transportType":"VMOTION"
+                        }
+                     ]
+                  }
+               ],
+               "nsxClusterSpec":{
+                  "nsxTClusterSpec":{
+                     "geneveVlanId": 0
+                  }
+               }
+            },
+            "vxRailDetails":{
+               "rootCredentials":{
+                  "password":"VMware123!",
+                  "username":"root",
+                  "credentialType":"SSH"
+               },
+               "adminCredentials":{
+                  "credentialType":"SSH",
+                  "username":"mystic",
+                  "password":"VMware123!"
+               }
+            }
+         }
+      ]
+   }
+}
